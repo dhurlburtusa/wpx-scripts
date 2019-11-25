@@ -3,6 +3,7 @@
 declare( strict_types = 1 );
 // echo 'wpx-scripts';
 
+require_once __DIR__ . '/../src/bootstrap.php';
 require_once __DIR__ . '/../src/ComposerScriptEventHandlers.php';
 
 use Wpx\Scripts\v0\ComposerScriptEventHandlers;
