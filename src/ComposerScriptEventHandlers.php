@@ -1,9 +1,12 @@
 <?php
 namespace Wpx\Scripts\v0;
 
+require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/Scripts.php';
+
 // use Composer\Script\Event;
 
-use Wpx\Scripts\Scripts;
+use Wpx\Scripts\v0\Scripts;
 
 class ComposerScriptEventHandlers {
 
