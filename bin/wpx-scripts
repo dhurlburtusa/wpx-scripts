@@ -4,9 +4,9 @@ declare( strict_types = 1 );
 // echo 'wpx-scripts';
 
 require_once __DIR__ . '/../src/bootstrap.php';
-require_once __DIR__ . '/../src/ComposerScriptEventHandlers.php';
+require_once __DIR__ . '/../src/ComposerEventHandlers.php';
 
-use Wpx\Scripts\v0\ComposerScriptEventHandlers;
+use Wpx\Scripts\v0\ComposerEventHandlers;
 
 // error_log( '$_ENV' . print_r( $_ENV, true ) ); // Empty
 // error_log( '$_SERVER' . print_r( $_SERVER, true ) );
@@ -23,10 +23,10 @@ if ( $argc >= 2 ) {
 
 	switch ( $command_name ) {
 		case 'post-install':
-			ComposerScriptEventHandlers::onPostInstall( [] );
+			ComposerEventHandlers::onPostInstall( [] );
 			break;
 		case 'post-update':
-			ComposerScriptEventHandlers::onPostUpdate( [] );
+			ComposerEventHandlers::onPostUpdate( [] );
 			break;
 		default:
 			echo "Command '{$command_name}' not recognized.\n";
