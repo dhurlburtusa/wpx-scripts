@@ -7,7 +7,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Scripts' ) ) {
 
 	class Scripts {
 
-		public static function deleteWpContent( $wp_content_dir = 'wp-content' ) {
+		public static function deleteWpContent( $wp_content_dir = 'wp/wp-content' ) {
 			// error_log( 'Wpx\Scripts\Scripts::deleteWpContent' );
 
 			// $wp_content_dir = __DIR__ . '/../../../wp/wp-content';
