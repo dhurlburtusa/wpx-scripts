@@ -1,4 +1,35 @@
 #!/usr/bin/env php
 <?php
 declare( strict_types = 1 );
-echo 'wpx-scripts';
+// echo 'wpx-scripts';
+
+use Wpx\Scripts\v0\ComposerScriptEventHandlers;
+
+// error_log( '$_ENV' . print_r( $_ENV, true ) ); // Empty
+// error_log( '$_SERVER' . print_r( $_SERVER, true ) );
+// error_log( '$_SERVER[\'COMPOSER_BINARY\']: ' . print_r( $_SERVER['COMPOSER_BINARY'], true ) );
+// error_log( '$_SERVER[\'COMPOSER_DEV_MODE\']: ' . print_r( $_SERVER['COMPOSER_DEV_MODE'], true ) );
+// error_log( '$_SERVER[\'argv\']: ' . print_r( $_SERVER['argv'], true ) );
+// error_log( '$_SERVER[\'argc\']: ' . print_r( $_SERVER['argc'], true ) );
+
+error_log( '$argv: ' . print_r( $argv, true ) );
+error_log( '$argc: ' . print_r( $argc, true ) );
+
+if ( $argc >= 2 ) {
+	$command_name = $argv[1];
+
+	switch ( $command_name ) {
+		case 'post-install':
+			ComposerScriptEventHandlers::onPostInstall( [] );
+			break;
+		case 'post-update':
+			ComposerScriptEventHandlers::onPostUpdate( [] );
+			break;
+		default:
+			echo "Command '{$command_name}' not recognized.\n";
+			echo 'TODO: Print script usage.' . "\n";
+	}
+}
+else {
+	echo 'TODO: Print script usage.';
+}
