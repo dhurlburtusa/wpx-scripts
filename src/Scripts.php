@@ -7,19 +7,31 @@ if ( ! class_exists( __NAMESPACE__ . '\Scripts' ) ) {
 
 	class Scripts {
 
+		/**
+		* Deletes the entire `wp-content` directory.
+		*
+		* @param {string} $wp_content_dir Optional. The path to the `wp-content`
+		* 	directory to be deleted. Defaults to `wp/wp-content`, a directory relative
+		* 	to the current working directory.
+		*/
 		public static function deleteWpContent( $wp_content_dir = 'wp/wp-content' ) {
 			// error_log( 'Wpx\Scripts\Scripts::deleteWpContent' );
-
-			// $wp_content_dir = __DIR__ . '/../../../wp/wp-content';
 
 			self::removeDir( $wp_content_dir );
 		}
 
+		/**
+		* Copies the entire contents of the "skeleton" (aka source) directory to the
+		* destination directory.
+		*
+		* @param {string} $src_dir Optional. The path to the "skeleton" (aka source)
+		* 	directory containing only the content to be copied. Defaults to `skel`, a
+		* 	directory relative to the current working directory.
+		* @param {string} $dst_dir Optional. The path to the destination directory.
+		* 	Defaults to the current working directory.
+		*/
 		public static function copySkeletons( $src_dir = 'skel', $dst_dir = './') {
 			// error_log( 'Wpx\Scripts\Scripts::copySkeletons' );
-
-			// $src_dir = __DIR__ . '/../../../skel';
-			// $dst_dir = __DIR__ . '/../../..';
 
 			self::copyDir( $src_dir, $dst_dir );
 		}

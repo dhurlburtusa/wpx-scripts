@@ -8,7 +8,7 @@ require_once __DIR__ . '/Scripts.php';
 
 use Wpx\Scripts\v0\Scripts;
 
-class ComposerScriptEventHandlers {
+class ComposerCallbacks {
 
 	public static function onPostInstall( /* Event */ $event ) {
 		// echo 'onPostInstall' . "\n";
