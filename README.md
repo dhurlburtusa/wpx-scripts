@@ -31,6 +31,11 @@ The following snippet demonstrates how to add a `post-install-cmd` and a `post-u
 
 ```
 {
+	"extra": {
+		"wordpress-install-dir": "wp",
+		"wpx-skeleton-dir": "skel",
+		"wpx-skeleton-destination-dir": null,
+	},
 	"scripts": {
 		"post-install-cmd": "Wpx\\Scripts\\v0\\ComposerCallbacks::onPostInstall",
 		"post-update-cmd": [
