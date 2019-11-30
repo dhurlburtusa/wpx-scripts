@@ -90,12 +90,12 @@ class ComposerCallbacks {
 		$extra = $package->getExtra();
 
 		$skel_dir = null;
-		if ( ! empty ( $extra['wpx-skeleton-dir'] ) ) {
+		if ( ! empty( $extra['wpx-skeleton-dir'] ) ) {
 			$skel_dir = $extra['wpx-skeleton-dir'];
 		}
 
 		$dst_dir = null;
-		if ( ! empty ( $extra['wpx-skeleton-destination-dir'] ) ) {
+		if ( ! empty( $extra['wpx-skeleton-destination-dir'] ) ) {
 			$dst_dir = $extra['wpx-skeleton-destination-dir'];
 		}
 
@@ -130,11 +130,11 @@ class ComposerCallbacks {
 		$extra = $package->getExtra();
 
 		$wp_install_dir = null;
-		if ( ! empty ( $extra['wordpress-install-dir'] ) ) {
+		if ( ! empty( $extra['wordpress-install-dir'] ) ) {
 			$wp_install_dir_cfg = $extra['wordpress-install-dir'];
 			$wp_install_dir = $wp_install_dir_cfg;
 			if ( is_array( $wp_install_dir_cfg ) ) {
-				if ( ! empty ( $wp_install_dir_cfg['johnpbloch/wordpress-core'] ) ) {
+				if ( ! empty( $wp_install_dir_cfg['johnpbloch/wordpress-core'] ) ) {
 					$wp_install_dir = $wp_install_dir_cfg['johnpbloch/wordpress-core'];
 				}
 			}

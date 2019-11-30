@@ -122,7 +122,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Scripts' ) ) {
 			if ( $src_dir_res !== false ) {
 				@mkdir( $dst_dir );
 
-				while( $file = readdir( $src_dir_res ) ) {
+				while ( $file = readdir( $src_dir_res ) ) {
 					if ( $file === false ) {
 						break;
 					}
