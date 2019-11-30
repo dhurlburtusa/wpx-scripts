@@ -32,12 +32,17 @@ The following snippet demonstrates how to add a `post-install-cmd` and a `post-u
 ```
 {
 	"extra": {
+		"@comment The WordPress installation directory. Used by `johnpbloch/wordpress` and this package.",
 		"wordpress-install-dir": "wp",
+		"@comment The path to the 'skeleton' directory. Defaults to 'skel'.",
 		"wpx-skeleton-dir": "skel",
+		"@comment The path to the destination of the 'skeleton' directory. Defaults to the project root.",
 		"wpx-skeleton-destination-dir": null,
 	},
 	"scripts": {
+		"@comment Example of how to reference the post-install event callback.",
 		"post-install-cmd": "Wpx\\Scripts\\v0\\ComposerCallbacks::onPostInstall",
+		"@comment Example of how to reference the post-update event callback using an array. Could have simply been a string.",
 		"post-update-cmd": [
 			"Wpx\\Scripts\\v0\\ComposerCallbacks::onPostUpdate"
 		]
