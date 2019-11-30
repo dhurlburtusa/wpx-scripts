@@ -4,9 +4,6 @@ declare( strict_types = 1 );
 // echo 'wpx-scripts';
 
 require_once __DIR__ . '/../src/bootstrap.php';
-require_once __DIR__ . '/../src/ComposerCallbacks.php';
-
-use Wpx\Scripts\v0\ComposerCallbacks;
 
 // error_log( '$_ENV' . print_r( $_ENV, true ) ); // Empty
 // error_log( '$_SERVER' . print_r( $_SERVER, true ) );
@@ -22,12 +19,6 @@ if ( $argc >= 2 ) {
 	$command_name = $argv[1];
 
 	switch ( $command_name ) {
-		case 'post-install':
-			ComposerCallbacks::onPostInstall( [] );
-			break;
-		case 'post-update':
-			ComposerCallbacks::onPostUpdate( [] );
-			break;
 		default:
 			echo "Command '{$command_name}' not recognized.\n";
 			echo 'TODO: Print script usage.' . "\n";
