@@ -41,6 +41,6 @@ The following snippet demonstrates how to add a `post-install-cmd` and a `post-u
 		"post-update-cmd": [
 			"Wpx\\Scripts\\v0\\ComposerCallbacks::onPostUpdate"
 		]
-  }
+	}
 }
 ```
