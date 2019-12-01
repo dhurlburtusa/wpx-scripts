@@ -1,0 +1,5 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#Parameter \$event of method Wpx\\Scripts\\v0\\ComposerCallbacks::[a-zA-Z0-9\\_]+\(\) has invalid typehint type Composer\\Script\\Event.#'
+			path: src/ComposerCallbacks.php
