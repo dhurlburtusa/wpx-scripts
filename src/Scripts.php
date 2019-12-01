@@ -1,4 +1,5 @@
 <?php
+
 namespace Wpx\Scripts\v0;
 
 require_once __DIR__ . '/bootstrap.php';
@@ -86,7 +87,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Scripts' ) ) {
 		* @return {array|null} $return['errors']
 		* @return {string} $return['errors'][i]['message']
 		*/
-		public static function copySkeletons( $src_dir = null, $dst_dir = null) {
+		public static function copySkeletons( $src_dir = null, $dst_dir = null ) {
 			// error_log( 'Wpx\Scripts\Scripts::copySkeletons' );
 
 			$src_dir = is_null( $src_dir ) ? self::SKELETON_DIR_DEFAULT : $src_dir;

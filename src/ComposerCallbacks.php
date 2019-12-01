@@ -1,4 +1,5 @@
 <?php
+
 namespace Wpx\Scripts\v0;
 
 require_once __DIR__ . '/bootstrap.php';
