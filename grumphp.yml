@@ -1,4 +1,5 @@
 parameters:
   tasks:
+    composer: ~
     composer_script:
       script: verify
