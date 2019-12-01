@@ -1,0 +1,4 @@
+parameters:
+  tasks:
+    composer_script:
+      script: verify
