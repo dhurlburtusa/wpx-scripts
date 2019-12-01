@@ -14,48 +14,64 @@
 	<exclude-pattern>tests/</exclude-pattern>
 	<exclude-pattern>vendor/</exclude-pattern>
 
-	<!--
+<!--
 	<autoload>phpcs-autoload.php</autoload>
-	-->
+-->
 
-	<!--
+<!--
 	<config name="" value="" />
-	-->
+-->
+
+	<!-- Show colors in console -->
+	<arg name="colors"/>
 
 	<!-- Scan only PHP files -->
 	<arg name="extensions" value="php"/>
 
-	<!-- Show colors in console -->
-	<arg value="-colors"/>
+<!--
+	Choose a report:
+	The full report is the default.
+	<arg name="report" value="code"/>
+	<arg name="report" value="full"/>
+	<arg name="report" value="info"/>
+	<arg name="report" value="source"/>
+	<arg name="report" value="summary"/>
+	<arg name="report" value="full,summary"/>
+-->
+	<arg name="report" value="full,summary"/>
+
+<!--
+	<arg name="report-width" value="auto"/>
+	<arg name="report-width" value="120"/>
+-->
+	<arg name="report-width" value="120"/>
 
 	<!-- No warnings -->
 	<arg value="n"/>
 
-	<!-- Show progress of run -->
-	<!--
-	<arg value="p"/>
-	-->
-
 	<!-- Show sniff codes in all reports -->
 	<arg value="s"/>
 
-	<!--
+<!--
 	<ini name="" value="" />
-	-->
+-->
 
 	<!-- Use PSR-12 as a base -->
 	<rule ref="PSR12">
 		<exclude name="Generic.Files.LineEndings.InvalidEOLChar"/>
 		<exclude name="Generic.WhiteSpace.DisallowTabIndent.NonIndentTabsUsed"/>
 		<exclude name="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+
 		<exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody"/>
 		<exclude name="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
-		<exclude name="PSR12.Classes.ClosingBrace.StatementAfter"/>
 		<exclude name="PSR2.Methods.FunctionCallSignature.SpaceAfterOpenBracket"/>
 		<exclude name="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket"/>
+
+		<exclude name="PSR12.Classes.ClosingBrace.StatementAfter"/>
 		<exclude name="PSR12.ControlStructures.ControlStructureSpacing.SpaceBeforeCloseBrace"/>
 		<exclude name="PSR12.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
 		<exclude name="PSR12.Files.FileHeader.SpacingAfterBlock"/>
+
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
 		<exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpen"/>
 		<exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingBeforeClose"/>
