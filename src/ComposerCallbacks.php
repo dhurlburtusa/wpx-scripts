@@ -1,5 +1,7 @@
 <?php
 
+declare( strict_types = 1 );
+
 namespace Wpx\Scripts\v0;
 
 require_once __DIR__ . '/bootstrap.php';
@@ -39,9 +41,9 @@ class ComposerCallbacks {
 	*     	},
 	*     }
 	*
-	* @param {Event} The Composer script event.
+	* @param Event $event The Composer script event.
 	*/
-	public static function onPostInstall( Event $event ) {
+	public static function onPostInstall( Event $event ): void {
 		// echo 'onPostInstall' . "\n";
 
 		self::copySkeletons( $event );
@@ -76,9 +78,9 @@ class ComposerCallbacks {
 	*     	},
 	*     }
 	*
-	* @param {Event} The Composer script event.
+	* @param Event $event The Composer script event.
 	*/
-	public static function onPostUpdate( Event $event ) {
+	public static function onPostUpdate( Event $event ): void {
 		// echo 'onPostUpdate' . "\n";
 
 		self::copySkeletons( $event );
@@ -110,7 +112,7 @@ class ComposerCallbacks {
 		}
 	}
 
-	protected static function deleteWpContent( Event $event ) {
+	protected static function deleteWpContent( Event $event ): void {
 		$composer = $event->getComposer();
 		$package = $composer->getPackage();
 
@@ -127,7 +129,7 @@ class ComposerCallbacks {
 		}
 	}
 
-	protected static function extractWpInstallDir( $package ) {
+	protected static function extractWpInstallDir( $package ): string {
 		$extra = $package->getExtra();
 
 		$wp_install_dir = null;

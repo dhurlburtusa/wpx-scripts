@@ -1,5 +1,7 @@
 <?php
 
+declare( strict_types = 1 );
+
 namespace Wpx\Scripts\v0;
 
 require_once __DIR__ . '/bootstrap.php';
@@ -24,17 +26,17 @@ if ( ! class_exists( __NAMESPACE__ . '\Scripts' ) ) {
 		* having one in core, it is recommended to remove the `wp-content` from core
 		* after core has been updated.
 		*
-		* @param {string} $wp_content_dir Optional. The path to the `wp-content`
+		* @param string $wp_content_dir Optional. The path to the `wp-content`
 		* 	directory to be deleted. Defaults to `wp/wp-content`, a directory relative
 		* 	to the current working directory. Set to `null` as an indicator to use the
 		* 	default value.
 		*
-		* @return {array} The result of the operation.
-		* @return {bool} $return['success']
-		* @return {array|null} $return['errors']
-		* @return {string} $return['errors'][i]['message']
+		* @return array The result of the operation.
+		* @return bool $return['success']
+		* @return array|null $return['errors']
+		* @return string $return['errors'][i]['message']
 		*/
-		public static function deleteWpContent( $wp_content_dir = null ) {
+		public static function deleteWpContent( string $wp_content_dir = null ) {
 			// error_log( 'Wpx\Scripts\Scripts::deleteWpContent' );
 
 			$wp_content_dir = is_null( $wp_content_dir ) ? self::WP_CONTENT_DIR_DEFAULT : $wp_content_dir;
@@ -74,18 +76,18 @@ if ( ! class_exists( __NAMESPACE__ . '\Scripts' ) ) {
 		*
 		* See https://www.google.com/search?q=linux+skel+directory for more details.
 		*
-		* @param {string|null} $src_dir Optional. The path to the "skeleton" (aka source)
+		* @param string|null $src_dir Optional. The path to the "skeleton" (aka source)
 		* 	directory containing only the content to be copied. Defaults to `skel`, a
 		* 	directory relative to the current working directory. Set to `null` as an
 		* 	indicator to use the default value.
-		* @param {string} $dst_dir Optional. The path to the destination directory.
+		* @param string $dst_dir Optional. The path to the destination directory.
 		* 	Defaults to the current working directory. Set to `null` as an
 		* 	indicator to use the default value.
 		*
-		* @return {array} The result of the operation.
-		* @return {bool} $return['success']
-		* @return {array|null} $return['errors']
-		* @return {string} $return['errors'][i]['message']
+		* @return array The result of the operation.
+		* @return bool $return['success']
+		* @return array|null $return['errors']
+		* @return string $return['errors'][i]['message']
 		*/
 		public static function copySkeletons( $src_dir = null, $dst_dir = null ) {
 			// error_log( 'Wpx\Scripts\Scripts::copySkeletons' );
